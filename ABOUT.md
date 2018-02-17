@@ -30,6 +30,3 @@ Experience with used tech.
 
     * Node/express: about 3 months of working experience now.
     * Handlebars: first time using it.
-
-
-Note: there's only one commit because I have a habit of squashing previous commits into one with a clear message
