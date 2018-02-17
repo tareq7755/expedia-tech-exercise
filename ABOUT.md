@@ -30,3 +30,5 @@ Experience with used tech.
 
     * Node/express: about 3 months of working experience now.
     * Handlebars: first time using it.
+    * heroku: first time working with it.
+    * travis-ci: frist time working with it.
