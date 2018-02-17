@@ -1,12 +1,10 @@
-var url = 'http://localhost:3000/offers';
-
 /**
  * @desc fetches the offers
  * @param {*} query 
  */
 function renderOffers(filters) {
     var request = new XMLHttpRequest();
-    request.open('GET', `${url}?data=${encodeURIComponent(JSON.stringify(filters))}`, true);
+    request.open('GET', `${window.location.origin}/offers?data=${encodeURIComponent(JSON.stringify(filters))}`, true);
     request.setRequestHeader('Content-type', 'application/json');
     request.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {

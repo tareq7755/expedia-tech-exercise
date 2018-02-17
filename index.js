@@ -31,4 +31,5 @@ app.get('*', (req, res) => {
     res.send('');
 });
 
-app.listen(3000, () => console.log('server is listening'));
+const port = process.env.PORT || 8080;
+app.listen(port, () => console.log('server is listening'));
