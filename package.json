@@ -1,0 +1,19 @@
+{
+  "name": "expedia",
+  "version": "1.0.0",
+  "description": "technical exercise",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "author": "Tareq El Abbas",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "jest": "^22.3.0"
+  }
+}

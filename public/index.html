@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="../public/css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Expedia Technical Exercise.</h1>
+            <p>Use the filters below to find offers that suit your needs.</p>
+            <hr>
+
+            <!--Filters-->
+            <form class="form-horizontal" id="filter-offers">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label class="control-label" for="destination">Destination</label> 
+                        <input type="text" class="form-control" id="destination" placeholder="City">
+                    </div>
+                    <div class="col-sm-2">
+                        <label class=" control-label" for="check-in">Check-in</label>
+                        <input type="date" class=" form-control" id="check-in">
+                    </div>
+                    <div class="col-sm-2">
+                        <label class="control-label" for="check-out">Check-out</label>
+                        <input type="date" class="pull-left form-control" id="check-out">
+                    </div>
+                    <div class="col-sm-2">
+                        <label class="pull-left control-label" for="min-star-rating">Minimum star rating</label>
+                        <input type="number" min=1 max=5 step="any" class="form-control" id="min-star-rating">
+                    </div>
+                    <div class="col-sm-2">
+                        <label class="control-label" for="max-star-rating">Maximum star rating</label>
+                        <input type="number" min=1 max=5 step="any" class="form-control" id="max-star-rating">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label class="control-label" for="min-total-rating">Minimum Total Rating</label>
+                        <input type="number" min=1 step="any" class="form-control" id="min-total-rating">
+                    </div>
+                    <div class="col-sm-2">
+                        <label class="control-label" for="max-total-rating">Maximum Total Rating</label>
+                        <input type="number" min=1 step="any" class="form-control" id="max-total-rating">
+                    </div>
+                    <div class="col-sm-2">
+                        <label class="control-label" for="min-guest-rating">Minimum Guest Rating</label>
+                        <input type="number" min=1 step="any" class="form-control" id="min-guest-rating">
+                    </div>
+                    <div class="col-sm-2">
+                        <label class="control-label" for="max-guest-rating">Maximum Guest Rating</label>
+                        <input type="number" min=1 step="any" class="form-control" id="max-guest-rating">
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="btn btn-primary" onclick="submit()">Find</div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+        <!--Handlebars main dom element-->
+        <div id="main-view"></div>
+
+        <!--Handlebars template-->
+        <script id="entry-template" type="text/x-handlebars-template">
+            <div class="container offers-container">
+                {{#each offers.Hotel}}
+                    <div class="row offer-container">
+                        <div class="col-sm-1 img-container">
+                            <img src= {{hotelInfo.hotelImageUrl}} />
+                        </div>
+                        <div class="col-sm-8 main-info">
+                            <h4 class="hotel-name">{{hotelInfo.hotelName}}</h4>
+                            <p><span class="glyphicon glyphicon-map-marker"></span>{{destination.longName}}</p>
+                            <p>{{destination.country}}</p>
+                        </div>
+                        <div class="col-sm-3 pricing-info">
+                            <div class="label label-info">
+                                <span>Rating: </span>
+                                <span class="rating">{{hotelInfo.hotelGuestReviewRating}}</span>
+                            </div>
+                            <div class="reviews">
+                                <span class="reviews-count">{{hotelInfo.hotelReviewTotal}}</span>
+                                <span>reviews</span>
+                            </div>
+                            <div>
+                                <strike>{{hotelPricingInfo.crossOutPriceValue}}</strike>
+                                <span class="total-price">{{hotelPricingInfo.totalPriceValue}}</span>
+                                <span class="price-currency">{{hotelPricingInfo.currency}}</span>
+                            </div>
+                            <div class="label label-success">
+                                <span>You save: </span>
+                                <span>{{hotelPricingInfo.percentSavings}}%</span>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </script>
+        <script src="../public/js/handlebars-v4.0.11.js"></script>
+        <script src="../public/js/script.js"></script>
+    </body>
+</html>
