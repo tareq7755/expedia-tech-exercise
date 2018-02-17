@@ -20,8 +20,7 @@ write the code in away that is easy to read and test.
 
 What I learned
 ============
-
-    * Promises are cool.
+    * How to set up CI with travis and heroku
     * Jest is my favourite testing framework so far.
     * Handlebars turned out to be fun to work with.
 

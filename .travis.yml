@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+- node
+install:
+- npm install
+deploy:
+  provider: heroku
+  strategy: git
+  app: expedia-tareq-test
+  on: master
+  api_key:
+    secure: DOGucgTzGuyGDIwABm+9aAUjMx6zwMOrlSMxIe3YQ5yoQxc1pfIDgU8nPg0ORX1VzPv3Mlt3geLgDd7BaMF6gBrO/BeZ2FpPvT9HPHT39j1lRJFl/Mfdss3Cbp76NwLGIMEvPzduUlqjfWbjy6z49P1Tsmr5dUJvNh+eyxznK7SpAZEDkuVDC3vOEwBH5Mlv5O2BFtzthDS2mqBOJqD5cIleKZ4i6EuO1Wg8+xbGUHFBU/CAEnXB5uOIoLm1kcD4P1xV6/6kPox5mYT3EUp4zvb0Xv2F+tt8gMuoGzweYw7Y+YY4rNQH33avnbUfo3BamfhxiqRpDI2NcTg3rePpvfjg25G8SgzpjKpEHG7KCVhmHibKXSiyxLVqyPLmvusULPg9qUdApHL0osdazgcZKNBvwqNbbRMl7ZNU5JbU1h1UldF5aZ7AhZFB0F9P695Pna2QgJw7SZ3912xc3QMA1TszyjS7c4wNPsqZWzoEev2Dc+gc3znesQpBXmD0EW2iLKU4Qhu1ZFLiKDqXUKu5V+zu49sLOmzK5SrV0ojwPeBDWP8OhX8+nl8leh/cho+ztTjI/S8AG4ObE9c8w+a3y7ZXmt9WSHSWNta2uh5fVKx72ugiovjOUE5GSBvWmC6y+RN6LIbd12aT1o5ojuj1cYOFFHKWiHWseUyskBE5TRM=
