@@ -37,8 +37,8 @@ function render(context) {
 function submit() {
     var filters = {
         destinationCity: document.getElementById('destination').value || undefined,
-        minTripStartDate: document.getElementById('check-in').value || undefined,
-        maxTripStartDate: document.getElementById('check-out').value || undefined,
+        minTripStartDate: document.getElementById('min-trip-start-date').value || undefined,
+        maxTripStartDate: document.getElementById('max-trip-start-date').value || undefined,
         minStarRating: document.getElementById('min-star-rating').value || undefined,
         maxStarRating: document.getElementById('max-star-rating').value || undefined,
         minTotalRating: document.getElementById('min-total-rating').value || undefined,
